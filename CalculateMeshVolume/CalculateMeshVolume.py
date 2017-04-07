@@ -3,6 +3,7 @@ from datetime import datetime
 from threading import Thread
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing import Process, Queue
+import os
 
 
 # Puthon 2.7 (64 bit, Anaconda full distro)
@@ -171,10 +172,10 @@ def calculate_mesh_volume(mesh, technique, description=None, expected_answer=Non
     print '{0} via {1}:\n\tFacet count is {2}.\n\tExpected answer is {3}.\n\tCalculate mesh volume is {4}.\n\n'.format(description, str(technique), facet_count, expected_answer, volume)
 
 
-inputs = [{'file':r'.\input\unit_sq.npy',                'description':'mesh volume of a unit square',            'expected_volume':0.0},
-          {'file':r'.\input\unit_cube_qppp.npy',         'description':'mesh volume of a unit cube',              'expected_volume':1.0},
-          {'file':r'.\input\shell.npy',                  'description':'mesh volume of a shell',                  'expected_volume':3.6586764273115655},
-          {'file':r'.\input\Robot_Maker_Faire_65pc.npy', 'description':'mesh volume of a Robot Maker Faire 65pc', 'expected_volume':43677.42582662092}]
+inputs = [{'file':os.path.join('.', 'input', 'unit_sq.npy') ,               'description':'mesh volume of a unit square',            'expected_volume':0.0},
+          {'file':os.path.join('.', 'input', 'unit_cube_qppp.npy'),         'description':'mesh volume of a unit cube',              'expected_volume':1.0},
+          {'file':os.path.join('.', 'input', 'shell.npy'),                  'description':'mesh volume of a shell',                  'expected_volume':3.6586764273115655},
+          {'file':os.path.join('.', 'input', 'Robot_Maker_Faire_65pc.npy'), 'description':'mesh volume of a Robot Maker Faire 65pc', 'expected_volume':43677.42582662092}]
 
 
 if __name__ == '__main__':
