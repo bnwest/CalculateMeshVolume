@@ -59,6 +59,10 @@ def calculate_mesh_volume(mesh, technique, description=None, expected_answer=Non
     EFFICIENT FEATURE EXTRACTION FOR 2D/3D OBJECTS
     IN MESH REPRESENTATION
     Cha Zhang and Tsuhan Chen
+
+    and here
+
+    http://stackoverflow.com/questions/1406029/how-to-calculate-the-volume-of-a-3d-mesh-object-the-surface-of-which-is-made-up
     """
     facet_count = mesh.shape[0]
     volume = 0.0
